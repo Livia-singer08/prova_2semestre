@@ -1,0 +1,60 @@
+DROP DATABASE IF EXISTS cantina;
+CREATE DATABASE cantina;
+USE cantina;
+
+CREATE TABLE Alunos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    turma VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Produtos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL CHECK (valor > 0)
+);
+
+CREATE TABLE Pedidos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    data DATE NOT NULL,
+    quantidade INT NOT NULL CHECK (quantidade >= 1),
+    id_aluno INT NOT NULL,
+    id_produto INT NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES Alunos(id),
+    FOREIGN KEY (id_produto) REFERENCES Produtos(id)
+);
+
+INSERT INTO Alunos (nome, turma) VALUES
+('Heloá Vitória', '2B EM'),
+('Maria Silva', '7C EF'),
+('Lucas Santos', '9A EF'),
+('Kauã Souza', '2B EM'),
+('Carla Ribeiro', '8B EF');
+
+INSERT INTO Produtos (nome, valor) VALUES
+('Coxinha', 6.50),
+('Pão de Queijo', 4.50),
+('Pastel', 8.00),
+('Suco Natural', 5.00),
+('Refrigerante', 6.00);
+
+INSERT INTO Pedidos (data, quantidade, id_aluno, id_produto) VALUES
+('2024-09-25', 2, 1, 1),
+('2024-09-25', 1, 2, 4),
+('2024-09-26', 3, 3, 3),
+('2024-09-26', 1, 4, 5),
+('2024-09-27', 2, 5, 2);
+
+------------------------------------------------------------------------------------------
+
+SELECT p.nome AS produto, COUNT(pd.id) AS total pedidos FROM Pedidos pd INNER JOIN Produtos p ON pd.id_produto = p.id GROUP BY p.nome ORDER BY total_pedidos DESC;
+
+
+SELECT a.nome AS aluno, SUM(pr.valor * pd.quantidade) AS total_gasto FROM Pedidos pd INNER JOIN Alunos a ON pd.id_aluno = a.id INNER JOIN Produtos pr ON pd.id_produto = pr.id
+GROUP BY a.nome
+ORDER BY total_gasto DESC;
+
+SELECT
+    SUM(pr.valor * pd.quantidade) AS total_faturado
+FROM Pedidos pd
+INNER JOIN Produtos pr ON pd.id_produto = pr.id;
