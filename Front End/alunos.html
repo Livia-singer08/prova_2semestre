@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Alunos - Cantina SESI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">CANTINA SESI</div>
+    <nav class="main-nav">
+        <a href="alunos.html">Alunos</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="produtos.html">Produtos</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <h1>Cadastro de Alunos</h1>
+
+    <form id="formAlunos" class="form-box">
+        <div class="input-group">
+            <label>Nome do Aluno</label>
+            <input type="text" id="nomeAluno" required>
+        </div>
+
+        <div class="input-group">
+            <label>Turma</label>
+            <input type="text" id="turmaAluno" required>
+        </div>
+
+        <button class="btn-submit">Cadastrar Aluno</button>
+    </form>
+
+    <h2>Alunos Cadastrados</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Turma</th>
+                <th>Total de Compras</th>
+            </tr>
+        </thead>
+        <tbody id="listaAlunos">
+        </tbody>
+    </table>
+
+</main>
+
+</body>
+</html>

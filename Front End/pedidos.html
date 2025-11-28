@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos - Cantina SESI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">CANTINA SESI</div>
+    <nav class="main-nav">
+        <a href="alunos.html">Alunos</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="produtos.html">Produtos</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <h1>Realizar Pedido</h1>
+
+    <form id="formPedidos" class="form-box">
+        <div class="input-group">
+            <label>ID do Aluno</label>
+            <input type="number" id="idAlunoPedido" required>
+        </div>
+
+        <div class="input-group">
+            <label>ID do Produto</label>
+            <input type="number" id="idProdutoPedido" required>
+        </div>
+
+        <div class="input-group">
+            <label>Quantidade</label>
+            <input type="number" id="quantidadePedido" required>
+        </div>
+
+        <button class="btn-submit">Registrar Pedido</button>
+    </form>
+
+    <h2>Pedidos Realizados</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Aluno</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="listaPedidos">
+        </tbody>
+    </table>
+
+</main>
+
+</body>
+</html>

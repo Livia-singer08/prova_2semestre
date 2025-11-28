@@ -1,0 +1,152 @@
+:root {
+    --vermelho-escuro: #8B0C0C;
+    --vermelho-medio: #B80D0D;
+    --vermelho-claro: #D63232;
+    --vermelho-suave: #F8C8C8;
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza-escuro: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-header {
+    background-color: var(--vermelho-escuro);
+    padding: 15px 30px;
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--branco);
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--vermelho-suave);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: var(--vermelho-escuro);
+    font-size: 1.9rem;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: var(--vermelho-medio);
+}
+
+.form-box {
+    background-color: var(--branco);
+    padding: 20px;
+    border-left: 5px solid var(--vermelho-medio);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--vermelho-suave);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--vermelho-claro);
+    box-shadow: 0 0 6px rgba(214, 50, 50, 0.4);
+}
+
+.btn-submit {
+    background-color: var(--vermelho-medio);
+    color: var(--branco);
+    padding: 12px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--vermelho-escuro);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.table thead {
+    background-color: var(--vermelho-escuro);
+    color: var(--branco);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--vermelho-suave);
+}
+
+.table tbody tr:hover {
+    background-color: #f9b3b3;
+    cursor: pointer;
+}
